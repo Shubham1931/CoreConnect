@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base:: parent(~{::#content},~{:: title},~{::script})}">
+<head>
+    <title th:text="${loggedInUser.name}">profile Page</title>
+</head>
+<body>
+   <div id="content">
+    <div th:if="${loggedInUser}">
+        <div th:replace="~{user/sidebar::sidebar}"></div>
+    </div>
+    <div  class="pl-64 -mt-1">
+        <div class=" bg-gray-100 rounded-lg shadow-lg  relative " style="height: 88vh;">
+        
+            <!-- Cover Image -->
+            <div class="w-full h-10 bg-cover bg-center rounded-lg text-5xl mb-10 text-center" >
+                <h2>User Profile</h2>
+            </div>
+    
+         <div class="flex justify-center items-center flex-col">
+               <!-- Profile Section -->
+               <div class="relative     flex items-center justify-center flex-col space-x-6 p-6">
+                <img id="profile-pic" class="w-32 h-32 rounded-full border-4 border-gray-900 shadow-lg" 
+                th:src="@{${loggedInUser.profilePic}}"
+                    alt="User Profile">
+                
+                <div class="flex justify-center items-center flex-col">
+                    <h2 id="user-name" th:text="${loggedInUser.name}" class="text-2xl font-bold">John Doe</h2>
+                    <p id="user-email" class="text-gray-900" th:text="${loggedInUser.email}" >johndoe@example.com</p>
+                   
+                </div>
+            </div>
+    
+            <!-- User Details -->
+           
+                
+                    <div class="flex justify-center items-center flex-col">
+                        <p class="text-gray-900 text-2xl font-bold">Contact Number:</p>
+                        <p th:text="${loggedInUser.phoneNumber}" class="text-lg font-semibold">New York, USA</p>
+                    </div>
+         
+    
+            <!-- Bio Section -->
+            <div class="flex justify-center items-center flex-col">
+                <h3 class="text-lg font-bold text-gray-900 ">About Me</h3>
+                <p id="user-bio" class="text-gray-800 text-sm mt-2" th:text="${loggedInUser.about}">
+                    Passionate Full Stack Developer with expertise in Java, Spring Boot, and modern web technologies. Always eager to learn and improve.
+                </p>
+            </div>
+    
+            <!-- Action Buttons -->
+          
+         </div>
+    
+        </div>
+    
+           
+       </div>
+   </div>
+   
+    <script>
+        console.log('profile page script');
+    </script>
+</body>
+</html>

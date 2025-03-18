@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base:: parent(~{::#content},~{:: title},~{::script})}">
+<head>
+    <title>Signup Page</title>
+</head>
+<body>
+    <div id="content">
+        
+<div class="grid grid-cols-12">
+    <div class="col-span-4 md:col-span-2 lg:col-span-4 xl:col-span-4"></div>
+    <div class="md:col-span-4 col-span-12 lg:col-span-4 xl:col-span-4" >
+        <div     href="#" class="block border-t-8 border-gray-950  p-6 bg-white   rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800  dark:hover:bg-gray-700">
+<div th:replace="message::messageBox"></div>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Signup Here</h5>
+            <p class="font-normal text-gray-400 dark:text-gray-400">Start managing contacts on cloud..</p>
+            <form  class="mt-4" th:action="@{/do-register}" method="post" th:object="${userForm}" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name </label>
+                   
+                    <input th:field="*{name}" type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your name"  />
+                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-red-600 px-1 text-xs">
+                      
+                  </p>
+                  
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email </label>
+                    <input th:field="*{email}" type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your Email" required />
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-600 px-1 text-xs">
+                      
+                    </p>
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password </label>
+                    <input th:field="*{password}" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your password" required />
+                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-red-600 px-1 text-xs ">
+                   </p>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number </label>
+                    <input th:field="*{phoneNumber}" type="number" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your Contact Number" required />
+                    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="text-red-600 px-1 text-xs ">
+                                          </p>
+                  </div>
+                <div class="mb-5">
+                    
+<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Write Something about yourself</label>
+<textarea th:field="*{about}" id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+<p th:if="${#fields.hasErrors('about')}" th:errors="*{about}" class="text-red-600 px-1 text-xs">
+  </p>
+
+                </div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Pic</label>
+                <input id="image_file_input" class=" mb-4 block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" th:field="*{userImage}" type="file" >
+                <div class="mb-1 text-center">
+                    <button type="submit" class=" mb-1 text-white  bg-gray-950 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Signup</button>
+                    
+                    <button type="reset" class=" text-white bg-gray-950 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reset</button>
+
+                </div>
+                
+            </form>
+            </div>
+            
+    </div>
+</div>
+        
+    </div>
+    <script>
+        console.log('signup page script');
+    </script>
+</body>
+</html>

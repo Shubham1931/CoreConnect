@@ -1,0 +1,61 @@
+<div th:fragment="contact">
+    <!-- Modal Background -->
+     <div style="display: flex; justify-content: center; align-items: center;">
+    <div id="view_contact_modal" class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 hidden pb-5 ">
+        <!-- Modal Container -->
+        <div class="relative  max-w-3xl bg-gray-700 backdrop-blur-md shadow-lg rounded-xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+            
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center bg-gradient-to-r from-blue-500 to-purple-600 p-5 rounded-t-xl">
+                <p id="favContactStatus" class="text-yellow-500 font-bold hidden">⭐ Favorite Contact</p>
+                <h3 class="text-xl font-bold text-white">Contact Details</h3>
+                <button onclick="closeContacModal()"  class="text-white hover:bg-white/20 rounded-full p-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 ">
+              
+                <div class="flex items-center space-x-4">
+                   
+                    <img id="contactImage" class="w-20 h-20 rounded-full shadow-lg border-2 border-blue-400"
+                        src="/default-profile.png" alt="Profile Picture">
+                    <div>
+                        <h4 id="contactName" class="text-2xl font-semibold text-white dark:text-white">Name</h4>
+                        <p id="contactEmail" class="text-sm dark:text-gray-400 text-white ">Email</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-blue-500"><i class="fas fa-phone"></i></span>
+                        <p id="contactPhone" class="text-white dark:text-gray-300">N/A</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-blue-500"><i class="fas fa-map-marker-alt"></i></span>
+                        <p id="contactAddress" class="text-white dark:text-gray-300">N/A</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-blue-500"><i class="fas fa-building"></i></span>
+                        <p class="text-center text-gray-700 mt-2">
+                    <a  id="contactSocial" href="#" class="text-white  " target="_blank">View Linkedin</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="flex justify-end p-4 bg-gray-100 dark:bg-gray-700 rounded-b-xl">
+                <button onclick="closeContacModal()" class="px-5 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

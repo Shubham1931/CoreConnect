@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base:: parent(~{::#content},~{:: title},~{::script})}">
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <div id="content">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold mb-4">Effortlessly Manage Your Contacts</h1>
+            <p class="text-lg mb-6">Securely store, access, and manage all your contacts in one place.</p>
+            <a th:href=@{/register} class="bg-blue-500 px-6 py-3 rounded text-lg hover:bg-blue-600">Start Now</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="py-16 text-center">
+        <h2 class="text-3xl font-semibold mb-8">Why Choose Smart Contact Manager?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <i class="fas fa-lock text-4xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Secure Storage</h3>
+                <p>Encrypted storage ensures your contacts are safe.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <i class="fas fa-search text-4xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Quick Search</h3>
+                <p>Find contacts instantly with advanced filters.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <i class="fas fa-users text-4xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Smart Grouping</h3>
+                <p>Organize contacts with custom groups and labels.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <i class="fas fa-cloud text-4xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Cloud Sync</h3>
+                <p>Access your contacts from anywhere, on any device.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-100 text-center">
+        <h2 class="text-3xl font-semibold mb-8">How It Works</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-8 px-6">
+            <div class="bg-blue-500 text-white p-6 rounded-lg">
+                <span class="text-3xl font-bold">1</span>
+                <h3 class="text-xl font-semibold mt-2">Sign Up & Create Account</h3>
+                <p>Register and start managing your contacts securely.</p>
+            </div>
+            <div class="bg-blue-500 text-white p-6 rounded-lg">
+                <span class="text-3xl font-bold">2</span>
+                <h3 class="text-xl font-semibold mt-2">Add, Edit & Organize</h3>
+                <p>Use AI-powered tools to manage contacts efficiently.</p>
+            </div>
+            <div class="bg-blue-500 text-white p-6 rounded-lg">
+                <span class="text-3xl font-bold">3</span>
+                <h3 class="text-xl font-semibold mt-2">Access Anytime, Anywhere</h3>
+                <p>Sync contacts across all your devices seamlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 text-center">
+        <h2 class="text-3xl font-semibold mb-6">Start Managing Your Contacts Today!</h2>
+        <a th:href="@{/register }" class="bg-gray-900 px-6 py-3 rounded text-lg hover:bg-blue-600 text-white">Create an Account</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-black text-white text-center">
+        <p>&copy; 2025 Smart Contact Manager. All rights reserved.</p>
+    </footer>
+        
+    </div>
+    <script>
+        console.log('home page script');
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+    <!DOCTYPE html>
+    <html lang="en" th:replace="~{base:: parent(~{::#content},~{:: title},~{::script})}">
+    <head>
+        <title th:text="${loggedInUser.name}+'|DashBoard'">DashBoard Page</title>
+    </head>
+    <body>
+    <div id="content">
+        <div th:if="${loggedInUser}">
+            <div th:replace="~{user/sidebar::sidebar}"></div>
+        </div>
+        <div  class="pl-64">
+            <div class="text-5xl text-center font-bold text-blue-500"><h1>User DashBoard</h1></div>
+          <div class="mt-16">
+              <!-- User Profile Card -->
+              <div class="bg-gray-100 p-6 rounded-lg flex items-center gap-6 shadow-lg pl-3">
+               <a href="/user/profile"> <img th:src=@{${loggedInUser.profilePic}} class="w-20 h-20 rounded-full border-2 border-blue-400" alt="User Profile"></a>
+                <div>
+                    <h1 th:text="${loggedInUser.name}" class="text-2xl font-bold">Welcome, <span class="text-blue-400">John Doe</span></h1>
+                    <p class="text-gray-400">Manage your contacts easily & efficiently.</p>
+                </div>
+            </div>
+
+            <!-- Analytics Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 pl-2">
+                
+                <!-- Total Contacts -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-blue-400">Total Contacts</h3>
+                    <p th:text="${totalContacts}" class="text-4xl font-bold mt-2">45</p>
+                </div>
+
+                <!-- Recent Activity -->
+                <a href="/user/contacts"  class="bg-gray-100 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col">
+                    <div>
+                        <h3 class="text-xl font-bold text-yellow-400">Click to show all Contacts</h3>
+                       
+                    </div>
+                </a>
+
+                <!-- Account Status -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-green-400">Account Status</h3>
+                    <p class="text-lg text-gray-300 mt-2">Active</p>
+                </div>
+
+            </div>
+          </div>
+
+            <!-- Recent Contacts List -->
+       
+            
+        </div>
+    </div>
+        <script>
+            console.log('profile page script');
+        </script>
+    </body>
+    </html>

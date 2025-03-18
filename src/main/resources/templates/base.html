@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" th:fragment="parent(content,title,script)" xmlns="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Base Page</title>
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{'/css/style.css'}">
+</head>
+<body>
+   <!-- main content -->
+    <div th:if="${loggedInUser}">
+        <div  th:replace="~{user/user_navbar:: user-navbar}"class="mb-7 ">
+    </div>
+    </div>
+    <div th:unless="${loggedInUser != null}">
+        <div th:replace="~{navbar:: navbar}" class="mb-7"></div>
+    </div>
+    
+    <br>    
+    <br><br>     
+    <section th:replace="${content}" class="p-6"></section>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/3.1.2/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script th:replace="${script}"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base:: parent(~{::#content},~{:: title},~{:: script})}">
+<head>
+    <title>services Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .neon-text { text-shadow: 0px 0px 10px #2196F3; }
+        .glow-box { box-shadow: 0 0 15px rgba(33, 150, 243, 0.5); }
+    </style>
+</head>
+<body>
+    <div id="content">
+         <!-- Services Section -->
+    <section class="py-5 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-12">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="p-6 bg-gray-900 text-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="text-[#2196F3] text-5xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-semibold">Secure Contact Storage</h3>
+                    <p class="mt-2 text-gray-300">End-to-end encryption to keep your contacts safe.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-6 bg-gray-900 text-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="text-[#2196F3] text-5xl mb-4"><i class="fas fa-users"></i></div>
+                    <h3 class="text-xl font-semibold">AI-Powered Insights</h3>
+                    <p class="mt-2 text-gray-300">Smart suggestions & analytics to manage your network.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-6 bg-gray-900 text-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="text-[#2196F3] text-5xl mb-4"><i class="fas fa-sync-alt"></i></div>
+                    <h3 class="text-xl font-semibold">Cloud Sync</h3>
+                    <p class="mt-2 text-gray-300">Sync contacts across multiple devices in real-time.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-6 bg-gray-900 text-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="text-[#2196F3] text-5xl mb-4"><i class="fas fa-lock"></i></div>
+                    <h3 class="text-xl font-semibold">Privacy Protection</h3>
+                    <p class="mt-2 text-gray-300">Your data is secured with the latest encryption techniques.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-6 bg-gray-900 text-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="text-[#2196F3] text-5xl mb-4"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="text-xl font-semibold">Mobile Accessibility</h3>
+                    <p class="mt-2 text-gray-300">Access and manage contacts on any device, anywhere.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-6 bg-gray-900 text-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="text-[#2196F3] text-5xl mb-4"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3 class="text-xl font-semibold">Fast Performance</h3>
+                    <p class="mt-2 text-gray-300">Optimized for speed and seamless contact management.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-black text-center text-white">
+        <p>&copy; 2025 Smart Contact Manager. All rights reserved.</p>
+    </footer>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    </div>
+    <script> 
+        console.log('services page script');
+    </script>
+</body>
+</html>
